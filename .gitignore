@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+instance/
+.env
+stray_animals.db
+*.sqlite3
+/static/uploads/
+.DS_Store

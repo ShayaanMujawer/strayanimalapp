@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - Hyelp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <header>
+        <h1>Hyelp</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('submit_report') }}">Submit Report</a>
+            <a href="{{ url_for('view_reports') }}">View Reports</a>
+            <a href="{{ url_for('logout') }}">Logout ({{ session.get('username') }})</a>
+        </nav>
+    </header>
+    <main>
+        <section class="stats">
+            <div class="stat-card">
+                <h2>Engagement</h2>
+                <p>$45,678.90</p>
+                <small>+20% month over month</small>
+            </div>
+            <div class="stat-card">
+                <h2>Reports Noticed</h2>
+                <p>2,405</p>
+                <small>+33% month over month</small>
+            </div>
+        </section>
+        <section class="recent-post">
+            <h2>Your Recent Post</h2>
+            <img src="{{ url_for('static', filename='uploads/sample.jpg') }}" alt="Recent Post" />
+        </section>
+        <section class="contacts">
+            <h2>Title</h2>
+            <div class="contact">
+                <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="Elynn Lee" />
+                <div>
+                    <p>Elynn Lee</p>
+                    <p>email@fakedomain.net</p>
+                </div>
+            </div>
+            <div class="contact">
+                <img src="{{ url_for('static', filename='images/user2.jpg') }}" alt="Oscar Dum" />
+                <div>
+                    <p>Oscar Dum</p>
+                    <p>email@fakedomain.net</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

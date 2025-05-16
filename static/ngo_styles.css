@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.report-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+img {
+    max-width: 100%;
+}

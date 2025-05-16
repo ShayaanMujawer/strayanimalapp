@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NGO Sign In - Hyelp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <main class="auth-container">
+        <h1>Sign in to your NGO Profile</h1>
+        <p>Enter your Code-Number to sign in</p>
+        <form action="{{ url_for('ngo_login') }}" method="POST">
+            <input type="text" name="code_number" placeholder="eg, AP000/2045" required />
+            <button type="submit">Continue</button>
+        </form>
+        <p><a href="{{ url_for('login_page') }}">Sign in as an user instead</a></p>
+    </main>
+</body>
+</html>

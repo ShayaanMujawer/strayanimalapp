@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notice Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <header>
+        <h1>Notice Report #{{ report.id }}</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('logout') }}">Logout ({{ session.get('username') }})</a>
+        </nav>
+    </header>
+    <main>
+        <form method="POST" action="{{ url_for('notice_report', report_id=report.id) }}">
+            <label for="contact_info">Your Contact Information:</label><br />
+            <textarea id="contact_info" name="contact_info" rows="4" cols="50" placeholder="Enter your phone number, email, or other contact details" required></textarea><br />
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
