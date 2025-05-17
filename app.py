@@ -7,6 +7,22 @@ import re
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Set a secret key for session management
 
+import sqlite3
+
+def init_db():
+    conn = sqlite3.connect('stray_animals.db')
+    cursor = conn.cursor()
+    with open('init_db.sql', 'r') as f:
+        sql_script = f.read()
+    cursor.executescript(sql_script)
+    conn.commit()
+    conn.close()
+
+# Initialize the database on app startup if not exists
+import os
+if not os.path.exists('stray_animals.db'):
+    init_db()
+
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 def allowed_file(filename):
