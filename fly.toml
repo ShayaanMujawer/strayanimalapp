@@ -1,0 +1,10 @@
+app = "stray-animal-app-new"
+
+[build]
+  image = "stray-animal-app-new"
+
+[env]
+  PORT = "5000"
+
+[deploy]
+  release_command = "python app.py"

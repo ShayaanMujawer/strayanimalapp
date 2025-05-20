@@ -1,69 +1,73 @@
-# Stray Animal Reporting App
+# Stray Animal App
 
-This is a Flask web application for reporting stray animals.
+This is a Flask web application for reporting and managing stray animal cases.
 
-## Setup and Deployment
+## Features
 
-### Local Setup
+- User signup and login
+- NGO login with code number
+- Submit reports with description, location, and image upload
+- View reports and update status
+- Notice reports with NGO contact info
+- Session management and access control
 
-1. Create a virtual environment and activate it:
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
+## Requirements
 
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+- Python 3.8+
+- Flask
+- Werkzeug
+- SQLite3
 
-3. Initialize the database:
-   ```
-   sqlite3 stray_animals.db < init_db.sql
-   ```
+## Setup
 
-4. Run the app:
-   ```
-   python app.py
-   ```
+1. Install dependencies:
 
-### Deploying to Heroku
+```
+pip install -r requirements.txt
+```
 
-1. Create a Heroku account and install the Heroku CLI.
+2. Initialize the database:
 
-2. Login to Heroku:
-   ```
-   heroku login
-   ```
+```
+sqlite3 stray_animals.db < init_db.sql
+```
 
-3. Create a new Heroku app:
-   ```
-   heroku create your-app-name
-   ```
+3. Run the app:
 
-4. Push the code to GitHub (if not already done):
-   ```
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/your-repo.git
-   git push -u origin main
-   ```
+```
+python app.py
+```
 
-5. Deploy to Heroku:
-   ```
-   git push heroku main
-   ```
+## Deployment on Deta.sh
 
-6. Open the app in your browser:
-   ```
-   heroku open
-   ```
+1. Create a Deta account at https://deta.sh/
+2. Install Deta CLI:
 
-You can now access the app on your phone using the Heroku app URL.
+```
+curl -fsSL https://get.deta.dev/cli.sh | sh
+```
+
+3. Login to Deta CLI:
+
+```
+deta login
+```
+
+4. Initialize a new Deta project in your app directory:
+
+```
+deta new --python
+```
+
+5. Deploy the app:
+
+```
+deta deploy
+```
+
+6. Access the public URL provided by Deta to use the app on your phone.
 
 ## Notes
 
-- The app uses SQLite, which is not ideal for production. For production, consider using a managed database service.
-- Uploaded images are saved in `static/uploads`.
+- Ensure the `static/uploads` directory exists and is writable for image uploads.
+- Update `app.py` if needed to handle environment variables for production.

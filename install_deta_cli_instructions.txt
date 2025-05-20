@@ -1,0 +1,17 @@
+To install the Deta CLI, you can run the following command in your terminal (Linux/macOS):
+
+```
+curl -fsSL https://get.deta.dev/cli.sh | sh
+```
+
+For Windows, you can use Windows Subsystem for Linux (WSL) or install Git Bash and run the above command.
+
+Alternatively, you can download the Deta CLI executable from the official Deta website: https://docs.deta.sh/docs/cli/install
+
+After installation, verify by running:
+
+```
+deta --version
+```
+
+This will confirm that the Deta CLI is installed correctly.

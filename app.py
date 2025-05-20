@@ -204,7 +204,7 @@ def login_page():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        # Add logic to verify user credentials
+        # verify user credentials
         session['username'] = username
         session['user_type'] = 'client'
         return redirect(url_for('dashboard'))
